@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <img name="slide" width ="400" height="400">
+
+  <audio controls id="music">
+    <source src="She-distort into me.mp3" type="audio/mpeg">
+</audio>
+<p>Click the buttons to play or stop the music.</p>
+
+<button onclick="play()" type="button">Play</button>
+<button onclick="pause()" type="button">Pause</button>
+  
+</body>
+</html>
+<script>
+
+var i = 0; //start point
+var images = [];
+var time = 3000;
+
+//image list
+images[0] = '1.jpg';
+images[1] = '2.jpg';
+images[2] = '3.jpg';
+images[3] = '4.jpg';
+
+//Change Image
+
+function changeImg(){
+  document.slide.src = images[i];
+
+  if(i < images.length -1) {
+    i++;
+ } else {
+   i = 0;
+ }
+
+ setTimeout("changeImg()", time);
+
+}
+
+var myMusic = document.getElementById("music");
+function play () {
+    myMusic.play();
+}
+
+function pause() {
+    myMusic.pause();
+}
+
+window.onload = play;
+
+
+
+</script>
+
